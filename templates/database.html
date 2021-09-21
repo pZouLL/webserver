@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+
+{%block title%}Drive{%endblock%}
+
+{%block content%}
+    <div class="container">
+        <a href = "/database/create-file"><button class = 'btn btn-primary'>Create New File</button></a>
+        <a href = "/database/create-file-code"><button class = 'btn btn-primary'>Create New File Code</button></a>
+        <div class="row">
+            {% for file in all_files %}
+                <div class="card" style="width: 18rem; margin-top : 4% ; margin-right : 8%;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{file[0]}}</h5>
+                        <a href = '/database/{{file[1]}}'>More Info</a>
+                    </div>
+                </div>
+            {%endfor%}
+        </div>
+    </div>
+{%endblock%}

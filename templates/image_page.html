@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+
+{%block title%}Watch Video{%endblock%}
+
+{%block content%}
+    {%if error%}
+        <a href = '/database/{{code}}' style = 'margin-top : 1%;'>Back</a>
+        <p style = 'color : white'>The File You Requested Is Doesn't Exist Or Isn't An Image</p>
+    {%else%}
+        <a href = '/database/{{code}}' style = 'margin-top : 1%;text-align:center'>Back</a>
+        <div style = 'text-align : center  ; margin-top : 10px;'>
+            <img src= {{ url_for('static', filename= filename ) }} type="image" width="320" height="240"></img>
+        </div>
+    {%endif%}
+{%endblock%}

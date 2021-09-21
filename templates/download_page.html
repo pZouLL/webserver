@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+
+{%block title%}Download{%endblock%}
+
+{%block content%}
+    <div style = 'text-align : center'>
+        <h1 style = 'font-family : Calibri ; color : white'>{{filename}}</h1>
+        <p style ='color : white'>Size : {{size}}mb</p>
+        <a href = "/file/download/{{code}}"><button class = 'btn btn-primary'><ion-icon name="download-outline"></ion-icon>Download</button></a>
+    </div>
+{%endblock%}

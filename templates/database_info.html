@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+
+{%block title%}{{filename}}{%endblock%}
+
+{%block content%}
+    <div style = 'color : white ; margin-top : 1% ; margin-left : 1%'>
+        <p>filename : {{filename}}</p>
+        <p>Size : {{size}}mb</p>
+        <p>filetype : {{ext}}</p>
+        <p>Download : <a href = '/file/{{code}}'>Download</a></p>
+
+        <a href = '/database/delete/{{code}}'>Delete</a>
+
+        {%if ext == "mp4"%}
+        <br>
+            <a href = '/file/video/{{code}}'>Watch Video Here</a>
+        {%else%}
+            <p></p>
+
+        {%endif%}
+
+        {%if ext == "png" or ext == "jpg" or ext == 'jpeg'%}
+            <a href = '/file/image/{{code}}'>See Image Here</a>
+
+        {%else%}
+            <p></p>
+
+        {%endif%}
+    </div>
+{%endblock%}
